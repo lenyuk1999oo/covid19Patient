@@ -27,7 +27,7 @@
     <form method="post" action="/choose">
         <div>
             <label style="text-align: left;">Chose patient to change :
-                <select class="form-control" name="patient">
+                <select class="form-control" name="patient" required>
                     {{#patients}}
                         <option value={{id}}>
                             {{name}}&nbsp;&nbsp;

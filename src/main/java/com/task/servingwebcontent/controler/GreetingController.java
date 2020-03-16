@@ -119,12 +119,17 @@ public class GreetingController {
                 patient.setName(Float.toString(
                         ((float) patientRepository.findByPatientStatus(PatientStatus.died).size() /
                                 (float) patients.size()) * 100));
+                patient.setSurname(Float.toString(
+                        ((float) patientRepository.findByPatientStatus(PatientStatus.died).size() /
+                                (float) patients.size()) * 100));
             }
         else
             for (Patient patient : dieds) {
                 patient.setName("Sick 0");
+                patient.setSurname("Sick 0");
             }
         model.put("dieds", dieds);
+
         model.put("patients", patients);
         return "filterByAge";
     }
@@ -178,10 +183,13 @@ public class GreetingController {
         if (patients.size() != 0)
             for (Patient patient : dieds) {
                 patient.setName(Float.toString(((float) diedGroup / (float) patients.size()) * 100));
+                patient.setSurname(Float.toString(((float) diedGroup /
+                        (float) ((ArrayList<Patient>) patientRepository.findAll()).size()) * 100));
             }
         else
             for (Patient patient : dieds) {
                 patient.setName("Sick 0");
+                patient.setSurname("Sick 0");
             }
         model.put("dieds", dieds);
 

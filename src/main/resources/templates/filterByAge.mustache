@@ -26,7 +26,7 @@
 <div style="text-align: center">
     <form method="post" action="/filterByAge">
         <div>
-            <label style="text-align: left">Status :
+            <label style="text-align: left">Group :
                 <select class="form-control" name="patientAge">
                     <option value=0>all</option>
                     <option value=1>Children 0 - 10</option>
@@ -43,8 +43,10 @@
         </div>
     </form>
 </div>
-
-<div style="text-align: center"><b>Died percent : {{#dieds}} {{name}} {{/dieds}} %.</b></div>
+{{#dieds}}
+    <div style="text-align: center"><b>Died percent for group: {{name}} %.</b></div>
+    <div style="text-align: center"><b>Died percent for all: {{surname}} %.</b></div>
+{{/dieds}}
 
 <div><br></div>
 

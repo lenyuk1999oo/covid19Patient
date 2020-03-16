@@ -26,7 +26,7 @@
     <form method="post" action="/delete">
         <div>
             <label style="text-align: left;">Chose patient to delete :
-                <select class="form-control" name="patient">
+                <select class="form-control" name="patient" required>
                     {{#patients}}
                         <option value={{id}}>
                             {{name}}&nbsp;&nbsp;
