@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete patient</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/main">Main</a>
+        <a class="navbar-brand" href="/add">Add new patient</a>
+        <a class="navbar-brand" href="/delete">Delete patient</a>
+        <a class="navbar-brand" href="/choose">Change patient</a>
+        <a class="navbar-brand" href="/filterByStatus">Filter patient by status</a>
+        <a class="navbar-brand" href="/filterByAge">Filter patient by age</a>
+    </nav>
+</div>
+<div><br></div>
+<div style="text-align: center">
+    <h3>Delete patient</h3>
+</div>
+
 <div style="text-align: center">
     <form method="post" action="/delete">
         <div>
-            <label>Chose patient to delete :
-                <select name="patient">
+            <label style="text-align: left;">Chose patient to delete :
+                <select class="form-control" name="patient">
                     {{#patients}}
                         <option value={{id}}>
                             {{name}}&nbsp;&nbsp;
@@ -22,13 +39,12 @@
                     {{/patients}}
                 </select>
             </label>
-            <button type="submit">Delete!</button>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Delete!</button>
         </div>
     </form>
 </div>
-
-<div><br><br><br></div>
-<div style="text-align: center"><a href="/main">go to main page</a></div>
 
 </body>
 </html>

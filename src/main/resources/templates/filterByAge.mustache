@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Patients Age</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/main">Main</a>
+        <a class="navbar-brand" href="/add">Add new patient</a>
+        <a class="navbar-brand" href="/delete">Delete patient</a>
+        <a class="navbar-brand" href="/choose">Change patient</a>
+        <a class="navbar-brand" href="/filterByStatus">Filter patient by status</a>
+        <a class="navbar-brand" href="/filterByAge">Filter patient by age</a>
+    </nav>
+</div>
+<div><br></div>
+
+<div style="text-align: center">
+    <h3>Filter person by Age</h3>
+</div>
+
 <div style="text-align: center">
     <form method="post" action="/filterByAge">
         <div>
-            <label>Status :
-                <select name="patientAge">
+            <label style="text-align: left">Status :
+                <select class="form-control" name="patientAge">
                     <option value=0>all</option>
                     <option value=1>Children 0 - 10</option>
                     <option value=2>Young 11 - 15</option>
@@ -19,15 +37,19 @@
                     <option value=6>Elderly 65+</option>
                 </select>
             </label>
-            <button type="submit">Find!</button>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Find!</button>
         </div>
     </form>
 </div>
 
 <div style="text-align: center"><b>Died percent : {{#dieds}} {{name}} {{/dieds}} %.</b></div>
 
-<div style="text-align: center">Patients:
-    <table align="center">
+<div><br></div>
+
+<div style="text-align: center"><h3>Patients:</h3>
+    <table class="table-striped table-inverse" align="center">
         <tr>
             <th>id&nbsp;&nbsp;</th>
             <th>name&nbsp;&nbsp;</th>
@@ -46,7 +68,6 @@
         {{/patients}}
     </table>
 </div>
-<div><br><br><br></div>
-<div style="text-align: center"><a href="/main">go to main page</a></div>
+
 </body>
 </html>

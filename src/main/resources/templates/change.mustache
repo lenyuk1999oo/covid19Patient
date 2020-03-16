@@ -3,43 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Change patient</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/main">Main</a>
+        <a class="navbar-brand" href="/add">Add new patient</a>
+        <a class="navbar-brand" href="/delete">Delete patient</a>
+        <a class="navbar-brand" href="/choose">Change patient</a>
+        <a class="navbar-brand" href="/filterByStatus">Filter patient by status</a>
+        <a class="navbar-brand" href="/filterByAge">Filter patient by age</a>
+    </nav>
+</div>
+<div><br></div>
+
+<div style="text-align: center">
+    <h3>Change patient</h3>
+</div>
+
 <div style="align-content: center; text-align: center">
     <form method="post" action="/change">
         <div>
-            <input type=number name="id" value={{patient.id}} hidden required />
+            <input type=number name="id" value={{patient.id}} hidden required/>
         </div>
         <div>
-            <label>Name :
-                <input type="text" name="name" value={{patient.name}} required />
+            <label style="text-align: left">Name :
+                <input class="form-control" type="text" name="name" value={{patient.name}} required/>
             </label>
         </div>
         <div>
-            <label>Surname :
-                <input type="text" name="surname" value={{patient.surname}} required />
+            <label style="text-align: left">Surname :
+                <input class="form-control" type="text" name="surname" value={{patient.surname}} required/>
             </label>
         </div>
         <div>
-            <label>Birth date :
-                <input type="date" name="birthDate" value={{patient.birthDate}} required />
+            <label style="text-align: left">Birth date :
+                <input class="form-control" type="date" name="birthDate" value={{patient.birthDate}} required/>
             </label>
         </div>
         <div>
-            <label>Status :
-                <select name="patientStatus">
+            <label style="text-align: left">Status :
+                <select class="form-control" name="patientStatus">
                     <option value=1>healed</option>
                     <option value=2>died</option>
                     <option value=3>healing</option>
                 </select>
             </label>
-            <button type="submit">Change!</button>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Change!</button>
         </div>
     </form>
 </div>
-<div><br><br><br></div>
-<div style="text-align: center"><a href="/main">go to main page</a></div>
-
 
 </body>
 </html>

@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Patients</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<div style="text-align: center"><a href="/add">add new patient</a></div>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/main">Main</a>
+        <a class="navbar-brand" href="/add">Add new patient</a>
+        <a class="navbar-brand" href="/delete">Delete patient</a>
+        <a class="navbar-brand" href="/choose">Change patient</a>
+        <a class="navbar-brand" href="/filterByStatus">Filter patient by status</a>
+        <a class="navbar-brand" href="/filterByAge">Filter patient by age</a>
+    </nav>
+</div>
 <div><br></div>
-<div style="text-align: center"><a href="/delete">delete patient</a></div>
-<div><br></div>
-<div style="text-align: center"><a href="/choose">change patient</a></div>
-<div><br></div>
-<div style="text-align: center"><a href="/filterByStatus">filter patient by status</a></div>
-<div><br></div>
-<div style="text-align: center"><a href="/filterByAge">filter patient by age</a></div>
-<div><br><br><br></div>
 
-<div style="text-align: center">Patients:
-    <table align="center">
+<div style="text-align: center"><h3>Patients:</h3>
+    <table class="table-striped table-inverse" align="center">
         <tr>
             <th>id&nbsp;&nbsp;</th>
             <th>name&nbsp;&nbsp;</th>
