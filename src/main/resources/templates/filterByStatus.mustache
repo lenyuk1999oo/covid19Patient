@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients Status</title>
+</head>
+<body>
+<div style="text-align: center">
+    <form method="post" action="/filterByStatus">
+        <div>
+            <label>Status :
+                <select name="patientStatus">
+                    <option value=0>all</option>
+                    <option value=1>healed</option>
+                    <option value=2>died</option>
+                    <option value=3>healing</option>
+                </select>
+            </label>
+            <button type="submit">Find!</button>
+        </div>
+    </form>
+</div>
+
+<div style="text-align: center">Patients:
+    <table align="center">
+        <tr>
+            <th>id&nbsp;&nbsp;</th>
+            <th>name&nbsp;&nbsp;</th>
+            <th>surname&nbsp;&nbsp;</th>
+            <th>birthDate&nbsp;&nbsp;</th>
+            <th>patientStatus&nbsp;&nbsp;</th>
+        </tr>
+        {{#patients}}
+            <tr>
+                <td>{{id}}&nbsp;&nbsp;</td>
+                <td>{{name}}&nbsp;&nbsp;</td>
+                <td>{{surname}}&nbsp;&nbsp;</td>
+                <td>{{birthDate.year}}&nbsp;&nbsp;{{birthDate.month}}&nbsp;&nbsp;{{birthDate.day}}&nbsp;&nbsp;</td>
+                <td>{{patientStatus}}&nbsp;&nbsp;</td>
+            </tr>
+        {{/patients}}
+    </table>
+</div>
+<div><br><br><br></div>
+<div style="text-align: center"><a href="/main">go to main page</a></div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients Age</title>
+</head>
+<body>
+<div style="text-align: center">
+    <form method="post" action="/filterByAge">
+        <div>
+            <label>Status :
+                <select name="patientAge">
+                    <option value=0>all</option>
+                    <option value=1>Children 0 - 10</option>
+                    <option value=2>Young 11 - 15</option>
+                    <option value=3>Youth 16 -18</option>
+                    <option value=4>Junior 19 - 23</option>
+                    <option value=5>Adult 24 - 65</option>
+                    <option value=6>Elderly 65+</option>
+                </select>
+            </label>
+            <button type="submit">Find!</button>
+        </div>
+    </form>
+</div>
+
+<div style="text-align: center"><b>Died percent : {{#dieds}} {{name}} {{/dieds}} %.</b></div>
+
+<div style="text-align: center">Patients:
+    <table align="center">
+        <tr>
+            <th>id&nbsp;&nbsp;</th>
+            <th>name&nbsp;&nbsp;</th>
+            <th>surname&nbsp;&nbsp;</th>
+            <th>birthDate&nbsp;&nbsp;</th>
+            <th>patientStatus&nbsp;&nbsp;</th>
+        </tr>
+        {{#patients}}
+            <tr>
+                <td>{{id}}&nbsp;&nbsp;</td>
+                <td>{{name}}&nbsp;&nbsp;</td>
+                <td>{{surname}}&nbsp;&nbsp;</td>
+                <td>{{birthDate.year}}&nbsp;&nbsp;{{birthDate.month}}&nbsp;&nbsp;{{birthDate.day}}&nbsp;&nbsp;</td>
+                <td>{{patientStatus}}&nbsp;&nbsp;</td>
+            </tr>
+        {{/patients}}
+    </table>
+</div>
+<div><br><br><br></div>
+<div style="text-align: center"><a href="/main">go to main page</a></div>
+</body>
+</html>

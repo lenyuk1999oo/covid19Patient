@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change patient</title>
+</head>
+<body>
+<div style="align-content: center; text-align: center">
+    <form method="post" action="/change">
+        <div>
+            <input type=number name="id" value={{patient.id}} hidden/>
+        </div>
+        <div>
+            <label>Name :
+                <input type="text" name="name" value={{patient.name}} />
+            </label>
+        </div>
+        <div>
+            <label>Surname :
+                <input type="text" name="surname" value={{patient.surname}} />
+            </label>
+        </div>
+        <div>
+            <label>Birth date :
+                <input type="date" name="birthDate" value={{patient.birthDate}} />
+            </label>
+        </div>
+        <div>
+            <label>Status :
+                <select name="patientStatus">
+                    <option disabled>choose new status</option>
+                    <option value=1>healed</option>
+                    <option value=2>died</option>
+                    <option value=3>healing</option>
+                </select>
+            </label>
+            <button type="submit">Change!</button>
+        </div>
+    </form>
+</div>
+<div><br><br><br></div>
+<div style="text-align: center"><a href="/main">go to main page</a></div>
+
+
+</body>
+</html>
