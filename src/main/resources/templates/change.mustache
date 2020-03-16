@@ -8,27 +8,26 @@
 <div style="align-content: center; text-align: center">
     <form method="post" action="/change">
         <div>
-            <input type=number name="id" value={{patient.id}} hidden/>
+            <input type=number name="id" value={{patient.id}} hidden required />
         </div>
         <div>
             <label>Name :
-                <input type="text" name="name" value={{patient.name}} />
+                <input type="text" name="name" value={{patient.name}} required />
             </label>
         </div>
         <div>
             <label>Surname :
-                <input type="text" name="surname" value={{patient.surname}} />
+                <input type="text" name="surname" value={{patient.surname}} required />
             </label>
         </div>
         <div>
             <label>Birth date :
-                <input type="date" name="birthDate" value={{patient.birthDate}} />
+                <input type="date" name="birthDate" value={{patient.birthDate}} required />
             </label>
         </div>
         <div>
             <label>Status :
                 <select name="patientStatus">
-                    <option disabled>choose new status</option>
                     <option value=1>healed</option>
                     <option value=2>died</option>
                     <option value=3>healing</option>
